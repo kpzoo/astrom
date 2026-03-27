@@ -70,9 +70,9 @@ inset2 = [0.32 0.38 0.1 0.08];
 for ii = 1:2
     sim = dis{ii};
     subplot(4, 2, ii+4);
-    stairs(sim.tdim-1, sim.w0, 'b-', 'LineWidth', 2);
+    stairs([0 sim.tdim], [0 sim.w0], 'b-', 'LineWidth', 2);
     hold on; box off;
-    stairs(sim.tdim-1, sim.w1, 'r-', 'LineWidth', 2);
+    stairs([0 sim.tdim], [0 sim.w1], 'r-', 'LineWidth', 2);
     grid on; hold off; 
     xlim([0 sim.tdim(end)]);
     xlabel('$s$ (days)', 'FontSize',fnt);
@@ -98,8 +98,9 @@ for ii = 1:2
             inset3 = inset2; inset3(1) = inset3(1) + 0.45;
             axes('Position', inset3);
     end
-    stairs(sim.tdim-1, sim.e, 'k-', 'LineWidth', 1);
-    grid on; box off; xlim([0 sim.tdim(end)]);
+     stairs([0 sim.tdim], [0 sim.e], 'k-', 'LineWidth', 2);
+    grid on; box off; xlim([0 sim.tdim(end)]); 
+    ylim([min(sim.e) 1]);
     title('control', FontSize = fnt);
 end
 

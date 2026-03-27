@@ -17,16 +17,16 @@ epiNam = {"Marburg", "Measles", "COVID", "Ebola"};
 if strcmp(epiNam{epiID}, 'Ebola')
     
     % Time settings
-    ndim = 80; tst = 120; T = 300;
+    ndim = 80; tst = 120; T = 320;
     % Optimisation settings
-    thresh = 0.01; wdiff = 0.0021; % works with maxDay = 31
+    thresh = 0.013; wdiff = 0.0021; % works with maxDay = 31
 
 elseif strcmp(epiNam{epiID}, 'COVID')
     
     % Time settings
-    ndim = 60; tst = 40; T = 150; 
+    ndim = 60; tst = 40; T = 160; 
     % Optimisation settings
-    thresh = 0.025; wdiff = 0.003; % works with maxDay = 31
+    thresh = 0.023; wdiff = 0.003; % works with maxDay = 31
 else
     error('Disease not yet supported');
 end
@@ -78,10 +78,10 @@ else
     switch epiID
         case 3
             % COVID removal proportions
-            str = 0.74; % works with maxDay = 31
+            str = 0.77; % works with maxDay = 31
         case 4
             % Ebola removal proportions
-            str = 0.72; % works with maxDay = 31
+            str = 0.73; % works with maxDay = 31
     end
     
     % Force areas to be contiguous
